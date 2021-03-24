@@ -1,13 +1,12 @@
 {
   "name": "assignment3",
   "version": "1.0.0",
-  "description": "",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "Jonathan Menna",
   "license": "ISC",
   "dependencies": {
     "bob-mongoose-currency": "^0.2.1",
@@ -19,5 +18,14 @@
     "eslint": "^7.19.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.22.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jmenna/Assignment3.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jmenna/Assignment3/issues"
+  },
+  "homepage": "https://github.com/jmenna/Assignment3#readme",
+  "description": ""
 }

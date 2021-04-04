@@ -1,13 +1,12 @@
 const express = require('express');
-const bodyparser = require('./Middlewares/bodyParser')
+const deleteMiddleware = require('./Middlewares/deleteMiddleware');
 
 const app = express();
-
-app.use(bodyparser)
+app.use(bodyParser.urlencoded());
+app.use(bodyParser.json());
 
 app.listen(8080);
 
-var logRequest = function (req, res, next)
-{
-  
-}
+const logRequest = function (req, res, next) {
+
+};

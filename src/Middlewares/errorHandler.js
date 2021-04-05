@@ -1,3 +1,5 @@
+const { getReasonPhrase, ReasonPhrases, StatusCodes } = require('http-status-codes');
+
 module.exports = (err, req, res, next) => {
-  req.status(500).send(`We're sorry, the error was: ${err.message}`);
+  res.status(500).send(`We're sorry, the error was: ${err.message}`);
 };

@@ -13,12 +13,16 @@ const logger = winston.createLogger({
   ],
 });
 
-module.exports = ('/', (req, res) => {
-  logger.log('info', {
+module.exports = app.all('/', (req, res, next) => {
+  const currentDate = Math.trunc(Date.now() / 1000);
+  logger.log('info', 'log', {
+    timestamp: currentDate,
     method: req.method,
+    url: req.url,
     body: req.body,
+    query: req.query,
+    headers: req.headers,
+    dateValidation: req.dateValidation,
   });
-  res
-    .status(StatusCodes.OK)
-    .send(ReasonPhrases.OK);
+  next();
 });

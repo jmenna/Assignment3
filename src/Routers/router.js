@@ -1,12 +1,13 @@
 const { ReasonPhrases, StatusCodes } = require('http-status-codes');
 const app = require('express').Router();
+const getRandomNumber = require('../Utilities/randomNumberGenerator');
 
 app.all('/', async (req, res, next) => {
-  const randomInt = Math.floor(Math.random() * 2);
-  if (randomInt === 0) {
+  const randomInt = getRandomNumber(1, 2);
+  if (randomInt === 1) {
     res.send('Hello World');
   }
-  if (randomInt === 1) {
+  if (randomInt === 2) {
     try {
       throw new Error('Oops');
     } catch {

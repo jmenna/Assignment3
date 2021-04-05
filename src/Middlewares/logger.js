@@ -1,4 +1,7 @@
 const winston = require('winston');
+const express = require('express');
+
+const app = express();
 
 const logger = winston.createLogger({
   level: 'info',
@@ -9,4 +12,9 @@ const logger = winston.createLogger({
   ],
 });
 
-module.exports = logger;
+module.exports = app.all('/', (req, res) => {
+  logger.log('info', {
+    method: req.method,
+    body: req.body,
+  });
+});

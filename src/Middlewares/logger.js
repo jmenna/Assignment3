@@ -1,5 +1,6 @@
 const winston = require('winston');
 const express = require('express');
+const { ReasonPhrases, StatusCodes } = require('http-status-codes');
 
 const app = express();
 
@@ -12,9 +13,12 @@ const logger = winston.createLogger({
   ],
 });
 
-module.exports = app.all('/', (req, res) => {
+module.exports = ('/', (req, res) => {
   logger.log('info', {
     method: req.method,
     body: req.body,
   });
+  res
+    .status(StatusCodes.OK)
+    .send(ReasonPhrases.OK);
 });

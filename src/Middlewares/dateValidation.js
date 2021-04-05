@@ -4,7 +4,6 @@ import {
 } from 'http-status-codes';
 import {
   epochHandler,
-  getEpochTimeLocale,
 } from 'epoch-handler';
 
 const express = require('express');
@@ -17,7 +16,7 @@ app.any('/', checkBody('date-validation').exists(), (req, res) => {
     validationResult(req).throw();
     try {
       epochHandler({
-        epoch: 'date-validation' || getEpochTimeLocale() + 50,
+        epoch: 'date-validation' || Date.now(),
         type: 'time_until',
         output: 'seconds',
       });

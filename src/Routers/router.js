@@ -1,9 +1,7 @@
-const express = require('express');
+const router = require('express').Router();
 
-const app = express();
-
-app.all('/', (req, res) => {
-  const randomInt = Math.floor(Math.random() * 2);
+router.all('/', (req, res) => {
+  const randomInt = Math.floor(Math.random() * 1);
   if (randomInt === 0) {
     res.send('Hello World');
   }
@@ -12,4 +10,4 @@ app.all('/', (req, res) => {
   }
 });
 
-module.exports = app;
+module.exports = router;

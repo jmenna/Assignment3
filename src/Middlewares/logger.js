@@ -1,6 +1,5 @@
 const winston = require('winston');
 const express = require('express');
-const { ReasonPhrases, StatusCodes } = require('http-status-codes');
 
 const app = express();
 
@@ -13,6 +12,7 @@ const logger = winston.createLogger({
   ],
 });
 
+// eslint-disable-next-line no-unused-vars
 module.exports = app.all('/', (req, res, next) => {
   const currentDate = Math.trunc(Date.now() / 1000);
   logger.log('info', 'log', {

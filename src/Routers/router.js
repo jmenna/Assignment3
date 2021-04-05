@@ -1,7 +1,7 @@
-const { ReasonPhrases, StatusCodes } = require('http-status-codes');
 const app = require('express').Router();
 const getRandomNumber = require('../Utilities/randomNumberGenerator');
 
+// eslint-disable-next-line no-unused-vars
 app.all('/', async (req, res, next) => {
   const randomInt = getRandomNumber(1, 2);
   if (randomInt === 1) {
